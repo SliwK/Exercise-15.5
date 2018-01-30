@@ -51,7 +51,7 @@ App = React.createClass({
       function(reason){
         console.error('Something went wrong', reason);
       }
-    })
+    });
 
     render: function() {
         var styles = {
