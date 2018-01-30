@@ -24,27 +24,29 @@ App = React.createClass({
     getGif: function(searchingText) {
       return new Promise(
         function(resolve, reject) {
-        const GIPHY_API_URL = 'https://api.giphy.com';
-        const GIPHY_PUB_KEY = "dc6zaTOxFJmzC";
-        const url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-              response(
-               var data = JSON.parse(xhr.responseText).data;
-                var gif = {
-                    url: data.fixed_width_downsampled_url,
-                    sourceUrl: data.url
-                )} else {
-                  reject(new Error(
-                   `XMLHttpRequest Error: ${this.statusText}`));
-                }
-            }
-        };
-        xhr.send();
-    },
+          var GIPHY_API_URL = 'https://api.giphy.com';
+          var GIPHY_PUB_KEY = "dc6zaTOxFJmzC";
+          var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', url);
+          xhr.onload = function() {
+              if (xhr.status === 200) {
+                resolve(this.xhr);
+              } else {
+                reject(new Error(this.statusText));
+              }
+          };
+          xhr.send();
+        }
+        )};
 
+    getGif(searchingText)
+    .then(response => () => {
+      var data = JSON.parse(xhr.responseText).data;
+       var gif = {
+           url: data.fixed_width_downsampled_url,
+           sourceUrl: data.url
+    })
 
     render: function() {
         var styles = {
