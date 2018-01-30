@@ -1,0 +1,21 @@
+{
+  "name": "projekt_15.5",
+  "version": "1.0.0",
+  "description": "Projekt - wyszukiwarka gifów - zastosowanie promise'ów",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "keywords": [
+    "wyszukiwarka",
+    "react",
+    "promise"
+  ],
+  "author": "Krzysztof Śliwiński",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "http-server": "^0.10.0"
+  }
+}
