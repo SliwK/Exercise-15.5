@@ -39,7 +39,7 @@ App = React.createClass({
           xhr.send();
         }
         )};
-
+/*
     getGif(searchingText)
     .then(
       function(gif){
@@ -52,7 +52,7 @@ App = React.createClass({
         console.error('Something went wrong', reason);
       }
     });
-
+*/
     render: function() {
         var styles = {
             margin: '0 auto',
