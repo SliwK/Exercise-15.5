@@ -31,7 +31,7 @@ App = React.createClass({
           xhr.open('GET', url);
           xhr.onload = function() {
               if (this.status === 200) {
-                resolve(JSON.parse(xhr.responseText).date);
+                resolve(JSON.parse(xhr.responseText).data);
               } else {
                 reject("error"));
               }
