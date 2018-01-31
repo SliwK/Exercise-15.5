@@ -31,12 +31,7 @@ App = React.createClass({
           xhr.open('GET', url);
           xhr.onload = function() {
               if (xhr.status === 200) {
-                resolve(
-                  var data = JSON.parse(xhr.responseText).data;
-                  var gif = {
-                       url: data.fixed_width_downsampled_url,
-                       sourceUrl: data.url
-                );
+                resolve(JSON.parse(xhr.responseText).data);
               } else {
                 reject("error"));
               }
