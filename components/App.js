@@ -31,9 +31,9 @@ App = React.createClass({
           xhr.open('GET', url);
           xhr.onload = function() {
               if (xhr.status === 200) {
-                resolve(this.response);
+                resolve(JSON.parse(xhr.responseText).date);
               } else {
-                reject(new Error(this.statusText));
+                reject("error"));
               }
           };
           xhr.send();
