@@ -38,7 +38,7 @@ App = React.createClass({
           };
           xhr.open('GET', url);
           xhr.send();
-        }
+        })
         )};
 /*
     getGif(searchingText)
