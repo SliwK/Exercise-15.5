@@ -30,7 +30,7 @@ App = React.createClass({
           var xhr = new XMLHttpRequest();
           xhr.open('GET', url);
           xhr.onload = function() {
-              if (this.status === 200) {
+              if (xhr.status === 200) {
                 resolve(
                   var data = JSON.parse(xhr.responseText).data;
                   var gif = {
