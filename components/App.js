@@ -35,7 +35,7 @@ App = React.createClass({
                   var data = JSON.parse(xhr.responseText).data;
                   var gif = {
                        url: data.fixed_width_downsampled_url,
-                       sourceUrl: data.url}
+                       sourceUrl: data.url};
                 );
               } else {
                 reject(console.log("error"));
