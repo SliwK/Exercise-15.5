@@ -28,7 +28,7 @@ App = React.createClass({
           var GIPHY_PUB_KEY = "dc6zaTOxFJmzC";
           var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
           var xhr = new XMLHttpRequest();
-          xhr.open('GET', url);
+
           xhr.onload = function() {
               if (this.status === 200) {
                 resolve(JSON.parse(xhr.responseText).data);
@@ -36,6 +36,7 @@ App = React.createClass({
                 reject("error"));
               }
           };
+          xhr.open('GET', url);
           xhr.send();
         }
         )};
