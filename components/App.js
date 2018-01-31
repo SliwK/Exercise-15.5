@@ -28,14 +28,15 @@ App = React.createClass({
           var GIPHY_PUB_KEY = "dc6zaTOxFJmzC";
           var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
           var xhr = new XMLHttpRequest();
-          xhr.open('GET', url);
+
           xhr.onload = function() {
-              if (xhr.status === 200) {
+              if (this.status === 200) {
                 resolve(JSON.parse(xhr.responseText).data);
               } else {
                 reject("error"));
               }
           };
+          xhr.open('GET', url);
           xhr.send();
         }
         )};
