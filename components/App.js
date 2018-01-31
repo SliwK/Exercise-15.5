@@ -30,7 +30,7 @@ App = React.createClass({
           var xhr = new XMLHttpRequest();
           xhr.open('GET', url);
           xhr.onload = function() {
-              if (xhr.status === 200) {
+              if (this.status === 200) {
                 resolve(JSON.parse(xhr.responseText).date);
               } else {
                 reject("error"));
@@ -39,20 +39,7 @@ App = React.createClass({
           xhr.send();
         }
         )};
-/*
-    getGif(searchingText)
-    .then(
-      function(gif){
-      var data = JSON.parse(xhr.responseText).data;
-       var gif = {
-           url: data.fixed_width_downsampled_url,
-           sourceUrl: data.url
-      },
-      function(reason){
-        console.error('Something went wrong', reason);
-      }
-    });
-*/
+
     render: function() {
         var styles = {
             margin: '0 auto',
