@@ -33,13 +33,13 @@ App = React.createClass({
               if (this.status === 200) {
                 resolve(JSON.parse(xhr.responseText).data);
               } else {
-                reject("error"));
+                reject("error");
               }
           };
           xhr.open('GET', url);
           xhr.send();
         })
-        )};
+      },
 /*
     getGif(searchingText)
     .then(
