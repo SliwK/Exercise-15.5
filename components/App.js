@@ -12,13 +12,19 @@ App = React.createClass({
       this.setState({
         loading: true
       });
-      this.getGif(searchingText, function(gif) {
-        this.setState({
-          loading: false,
-          gif: gif,
-          searchingText: searchingText
-        });
-      }.bind(this));
+      this.getGif(searchingText)
+        .then(data => {
+          var gif = {
+            url: data.fixed_width_downsampled_url,
+            sourceUrl: data.url
+          }
+          this.setState({
+            loading: false,
+            gif: gif,
+            searchingText: searchingText
+          })
+        })
+        .catch((err_message) => console.log("Error: "+ err_message));
     },
 
     getGif: function(searchingText) {
